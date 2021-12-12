@@ -1,0 +1,40 @@
+@import "./mixins.scss";
+@import "./variables.scss";
+
+// @use 'settings';
+
+.inline-wrapper {
+  flex-direction: row;
+
+  @include md {
+    flex: 4;
+  }
+
+  .imageHero-wrapper {
+    display: grid;
+
+    @include sm {
+      display: inline-flex;
+    }
+
+    .imageHero {
+      flex: 1;
+      width: cover;
+      margin: 0;
+      padding: 0;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+.sections-wrapper {
+  display: grid;
+  text-align: center;
+
+  @include lg {
+    display: flex;
+    width: 100%;
+  }
+}

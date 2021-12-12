@@ -1,0 +1,79 @@
+// @use 'settings';
+@import "./mixins.scss";
+@import "./variables.scss";
+
+.sidebar-wrapper {
+  flex: 1;
+  background: linear-gradient($color-grey-dark-1, black);
+  position: relative;
+  align-content: flex-start;
+  align-items: center;
+
+  @include lg {
+    flex: 1;
+    display: grid;
+  }
+
+  .sidebar-item {
+    padding: 20px;
+
+    background-position: 100% 0;
+    background-size: 300%;
+    transition: all 1s;
+    display: inline-block;
+    color: $color-grey-light-1;
+    background-image: linear-gradient(
+      90deg,
+      $color-primary-light 50%,
+      transparent 50%
+    );
+    cursor: pointer;
+    &:hover {
+      background-position: 0 100%;
+      color: $color-grey-light-1;
+    }
+    .sidebar-text {
+      padding-left: 30px;
+      font-family: $font-text;
+      text-align: start;
+      @include xs {
+        padding: 0;
+      }
+      @include sm {
+        padding-left: 10px;
+      }
+      a {
+        cursor: default;
+        text-decoration: none;
+        color: $color-grey-light-1;
+      }
+    }
+
+    @include xs {
+      padding: 10px;
+    }
+    @include lg {
+      padding: 10px;
+      margin-top: 10px;
+    }
+  }
+  .trademark {
+    display: none;
+    @include lg {
+      display: block;
+      position: absolute;
+      color: $color-grey-light-1;
+      bottom: 20px;
+      padding: 20px;
+    }
+  }
+}
+.sections-wrapper {
+  display: grid;
+  text-align: center;
+
+  @include lg {
+    display: flex;
+    width: 100%;
+  }
+}
