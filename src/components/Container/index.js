@@ -1,6 +1,5 @@
 import React from "react"
-import "../../sass/partials/_settings.scss";
-import "../../sass/style.scss";
+import "../../sass/global.scss"
 
 const Container = () => {
   return <div className="container" />

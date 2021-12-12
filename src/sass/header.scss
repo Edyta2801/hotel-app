@@ -1,0 +1,139 @@
+// @use 'settings';
+@import "./global.scss";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  line-height: 1.7;
+  font-family: $font-text;
+}
+
+html {
+  width: 100%;
+  background: linear-gradient($color-primary, $color-primary-dark);
+  background: linear-gradient($color-primary-dark);
+  height: 100%;
+  scroll-behavior: smooth;
+}
+.container {
+  max-width: 1400px;
+  background: linear-gradient($color-primary-dark);
+  // background-color: $color-grey-light-1;
+
+  @include xs {
+    margin: 2rem;
+  }
+  @include sm {
+    margin: 2rem;
+  }
+  @include md {
+    margin: 3rem;
+  }
+  @include lg {
+    margin: 5rem;
+  }
+  @include xl {
+    margin: 7rem;
+  }
+  @include xxl {
+    margin: 10rem auto;
+  }
+}
+
+.header-wrapper {
+  display: inline-flex;
+  width: 100%;
+  //   border-bottom: $line;
+  text-align: center;
+  .logo {
+    flex: 1;
+    .logo-image {
+      padding: 30px 0;
+      img {
+        width: 70px;
+        // height: 100px;
+      }
+    }
+    @include xs {
+      padding-left: 1rem;
+    }
+    @include sm {
+      padding-left: 1rem;
+    }
+  }
+  .search {
+    flex: 8;
+    align-items: center;
+    justify-content: center;
+    .search-input {
+      text-align: center;
+      padding: 30px 0;
+
+      form {
+        input {
+          width: 70%;
+          background-color: $color-grey-light-3;
+          border-color: $color-grey-light-4;
+          border-style: none;
+          height: 50px;
+          border-radius: 25px;
+          border-image: none;
+          font-size: large;
+          padding: 20px;
+          color: $color-grey-dark-1;
+          font-family: $font-text;
+          transition: width 0.4s ease-in-out;
+
+          @include xs {
+            width: 90%;
+          }
+
+          &:focus {
+            outline: none;
+            width: 80%;
+          }
+        }
+      }
+    }
+  }
+
+  .avatar {
+    // flex: 1;
+    display: inline-flex;
+    text-align: end;
+    padding-left: 30px;
+    .avatar-image {
+      padding: 30px 10px;
+      img {
+        width: 50px;
+        border-radius: 50%;
+      }
+    }
+
+    .hello {
+      margin: auto;
+      text-align: left;
+      .hello-text {
+        font-size: medium;
+
+        color: $color-grey-dark-1;
+        font-family: $font-text;
+      }
+
+      @include xs {
+        padding-right: 1rem;
+      }
+      @include sm {
+        padding-right: 1rem;
+      }
+    }
+    &:hover {
+      background-color: $color-grey-light-3;
+    }
+  }
+}

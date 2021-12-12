@@ -1,11 +1,13 @@
 import React from "react"
-import "../../sass/partials/_header.scss"
+import "../../sass/header.css";
+
 import logo from "../../materials/layout_materials/img/logo.png"
 import user from "../../materials/layout_materials/img/user.jpg"
 
 const Header = () => {
   return (
     <>
+    <div className='container'>
       <div classNameName="header-wrapper">
         <div className="logo">
           <div className="logo-image">
@@ -28,7 +30,7 @@ const Header = () => {
           </div>
         </div>
       </div>
-      <div className="line"></div>
+      <div className="line"></div></div>
     </>
   )
 }

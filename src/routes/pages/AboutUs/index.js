@@ -1,13 +1,14 @@
 import React from "react"
-import { Header } from "../../../components/";
-import { Container } from "../../../components/"
+import { Header } from "../../../components/"
+import "../../../sass/global.scss"
 
 function AboutUs() {
   return (
-    <Container>
+    <div>
+    {/* // <div className="container"> */}
       <Header />
       <div>About Us</div>
-    </Container>
+    </div>
   )
 }
 

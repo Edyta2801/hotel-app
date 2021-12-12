@@ -5,7 +5,7 @@ import Hotel from '../../routes/pages/Hotel';
 import ContactUs from '../../routes/pages/ContactUs';
 import Rooms from '../../routes/pages/Rooms';
 
-const Router = () => {
+const AppRouter = () => {
 	return (
 		<BrowserRouter>
 			<Routes>
@@ -18,4 +18,4 @@ const Router = () => {
 	);
 };
 
-export default Router;
+export default AppRouter;
