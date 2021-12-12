@@ -1,0 +1,28 @@
+@use 'settings';
+
+.inline-wrapper {
+  flex-direction: row;
+
+  @include md {
+    flex: 4;
+  }
+
+  .imageHero-wrapper {
+    display: grid;
+
+    @include sm {
+      display: inline-flex;
+    }
+
+    .imageHero {
+      flex: 1;
+      width: cover;
+      margin: 0;
+      padding: 0;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+}

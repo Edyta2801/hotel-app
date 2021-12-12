@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600");
+
+/* Variables */
+
+$color-primary: #eb2f64;
+$color-primary-light: #ff3366;
+$color-primary-dark: #ba265d;
+$color-grey-light-1: #faf9f9;
+$color-grey-light-2: #f4f2f2;
+$color-grey-light-3: #f0eeee;
+$color-grey-light-4: #ccc;
+$color-grey-dark-1: #333;
+$color-grey-dark-2: #777;
+$color-grey-dark-3: #999;
+$shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
+$shadow-light: 0 2rem 5rem rgba(0, 0, 0, 0.06);
+$line: 1px solid var(--color-grey-light-2);
+$font-text: "Open Sans", sans-serif;
+
+// Small tablets and large smartphones (landscape view)
+$screen-sm-min: 576px;
+
+// Small tablets (portrait view)
+$screen-md-min: 768px;
+
+// Tablets and small desktops
+$screen-lg-min: 992px;
+
+// Large tablets and desktops
+$screen-xl-min: 1200px;
+
+// Desktops and Retina
+$screen-xxl-min: 1536px;
+
+// Very Small devices
+@mixin xs {
+  @media (max-width: #{$screen-sm-min}) {
+    @content;
+  }
+}
+
+// Small devices
+@mixin sm {
+  @media (min-width: #{$screen-sm-min}) {
+    @content;
+  }
+}
+
+// Medium devices
+@mixin md {
+  @media (min-width: #{$screen-md-min}) {
+    @content;
+  }
+}
+
+// Large devices
+@mixin lg {
+  @media (min-width: #{$screen-lg-min}) {
+    @content;
+  }
+}
+
+// Extra large devices
+@mixin xl {
+  @media (min-width: #{$screen-xl-min}) {
+    @content;
+  }
+}
+
+// Super large devices
+@mixin xxl {
+  @media (min-width: #{$screen-xxl-min}) {
+    @content;
+  }
+}
+
+// Globals
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  line-height: 1.7;
+  font-family: $font-text;
+
+  width: 100%;
+  // background: linear-gradient($color-primary, $color-primary-dark);
+  background: linear-gradient($color-primary-dark);
+  height: 100%;
+  scroll-behavior: smooth;
+
+  .container {
+    max-width: 1400px;
+    background: linear-gradient($color-primary-dark);
+    // background-color: $color-grey-light-1;
+
+    @include xs {
+      margin: 2rem;
+    }
+    @include sm {
+      margin: 2rem;
+    }
+    @include md {
+      margin: 3rem;
+    }
+    @include lg {
+      margin: 5rem;
+    }
+    @include xl {
+      margin: 7rem;
+    }
+    @include xxl {
+      margin: 10rem auto;
+    }
+  }
+
+  .line {
+    border: 1px solid #f4f2f2;
+  }
+
+  .sections-wrapper {
+    display: grid;
+    text-align: center;
+
+    @include lg {
+      display: flex;
+      width: 100%;
+    }
+  }
+}
