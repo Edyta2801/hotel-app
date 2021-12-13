@@ -1,5 +1,5 @@
 import React from "react"
-import { Header } from "../../../components/"
+import { HeaderRooms } from "../../../components/"
 import { Sidebar } from "../../../components/"
 import { Hero } from "../../../components/"
 import { Rooms } from "../../../components/"
@@ -7,7 +7,7 @@ import { Rooms } from "../../../components/"
 function RoomsPage() {
   return (
     <>
-      <Header />
+      <HeaderRooms />
       <Sidebar />
       <Hero />
       <Rooms />

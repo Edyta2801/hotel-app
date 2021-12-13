@@ -1,0 +1,37 @@
+@import "./mixins.scss";
+@import "./variables.scss";
+
+.room-wrapper {
+  width: 200px;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+  margin-bottom: 25px;
+  color: $color-grey-dark-2;
+  font-size: small;
+  text-align: start;
+  .title {
+    color: $color-primary;
+    font-weight: bold;
+    font-size: medium;
+  }
+
+  img {
+    width: 200px;
+  }
+
+  .description {
+    padding: 10px 20px;
+    justify-content: center;
+
+    .size {
+      display: flex;
+      padding: 0 3px;
+    }
+    .price {
+      display: flex;
+      .number {
+        padding: 0 3px;
+      }
+    }
+  }
+}

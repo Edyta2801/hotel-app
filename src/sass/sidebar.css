@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600");
+/* Variables */
+.sidebar-wrapper {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  background: -webkit-gradient(linear, left top, left bottom, from(#333), to(black));
+  background: linear-gradient(#333, black);
+  position: relative;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (min-width: 992px) {
+  .sidebar-wrapper {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    display: -ms-grid;
+    display: grid;
+  }
+}
+
+.sidebar-wrapper .sidebar-item {
+  padding: 20px;
+  background-position: 100% 0;
+  background-size: 300%;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  display: inline-block;
+  color: #faf9f9;
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(50%, #ff3366), color-stop(50%, transparent));
+  background-image: linear-gradient(90deg, #ff3366 50%, transparent 50%);
+  cursor: pointer;
+}
+
+.sidebar-wrapper .sidebar-item:hover {
+  background-position: 0 100%;
+  color: #faf9f9;
+}
+
+.sidebar-wrapper .sidebar-item .sidebar-text {
+  padding-left: 30px;
+  font-family: "Open Sans", sans-serif;
+  text-align: start;
+}
+
+@media (max-width: 576px) {
+  .sidebar-wrapper .sidebar-item .sidebar-text {
+    padding: 0;
+  }
+}
+
+@media (min-width: 576px) {
+  .sidebar-wrapper .sidebar-item .sidebar-text {
+    padding-left: 10px;
+  }
+}
+
+.sidebar-wrapper .sidebar-item .sidebar-text a {
+  cursor: default;
+  text-decoration: none;
+  color: #faf9f9;
+}
+
+@media (max-width: 576px) {
+  .sidebar-wrapper .sidebar-item {
+    padding: 10px;
+  }
+}
+
+@media (min-width: 992px) {
+  .sidebar-wrapper .sidebar-item {
+    padding: 10px;
+    margin-top: 10px;
+  }
+}
+
+.sidebar-wrapper .trademark {
+  display: none;
+}
+
+@media (min-width: 992px) {
+  .sidebar-wrapper .trademark {
+    display: block;
+    position: absolute;
+    color: #faf9f9;
+    bottom: 20px;
+    padding: 20px;
+  }
+}
+
+.sections-wrapper {
+  display: -ms-grid;
+  display: grid;
+  text-align: center;
+}
+
+@media (min-width: 992px) {
+  .sections-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=sidebar.css.map */

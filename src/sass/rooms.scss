@@ -1,0 +1,10 @@
+@import "./mixins.scss";
+@import "./variables.scss";
+
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background-color: $color-grey-dark-3;
+  padding-top: 20px;
+}

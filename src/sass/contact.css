@@ -1,0 +1,175 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600");
+/* Variables */
+.contact-wrapper {
+  display: -ms-grid;
+  display: grid;
+  background-color: #f4f2f2;
+}
+
+.contact-wrapper .title-contact {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: 20px;
+  background-color: #faf9f9;
+}
+
+.contact-wrapper .title-contact .title-text {
+  padding-right: 30px;
+  color: #777;
+}
+
+.contact-wrapper .title-contact .title-add {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.contact-wrapper .title-contact .title-add .link {
+  color: #ff3366;
+  font-size: small;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+
+.contact-wrapper .title-contact .title-add .link:hover {
+  -webkit-transform: scale(1.3);
+          transform: scale(1.3);
+  -webkit-box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.3);
+          box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.3);
+  color: #333;
+}
+
+.contact-wrapper .content-background {
+  background-color: #faf9f9;
+  display: -ms-inline-grid;
+  display: inline-grid;
+  justify-items: baseline;
+  padding: 3rem;
+}
+
+@media (min-width: 768px) {
+  .contact-wrapper .content-background {
+    margin: 3rem;
+  }
+}
+
+.contact-wrapper .content-background .content-text {
+  color: #777;
+  font-size: medium;
+  font-weight: bolder;
+  padding: 20px 0;
+  text-align: start;
+}
+
+.contact-wrapper .content-background .form-wrapper {
+  width: -webkit-fill-available;
+  width: -moz-available;
+  width: stretch;
+}
+
+@media (min-width: 768px) {
+  .contact-wrapper .content-background .form-wrapper {
+    padding-right: 15rem;
+  }
+}
+
+.contact-wrapper .content-background .form-wrapper .cell {
+  text-align: center;
+  padding: 10px 0;
+}
+
+.contact-wrapper .content-background .form-wrapper .cell form input {
+  width: 100%;
+  background-color: #f0eeee;
+  border-color: #ccc;
+  border-style: none;
+  height: 50px;
+  border-radius: 25px;
+  -o-border-image: none;
+     border-image: none;
+  font-size: medium;
+  padding: 20px;
+  color: #333;
+  font-family: "Open Sans", sans-serif;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+.contact-wrapper .content-background .form-wrapper .cell form input:focus {
+  outline: none;
+}
+
+.contact-wrapper .content-background .form-wrapper .cell form textarea {
+  width: 100%;
+  background-color: #f0eeee;
+  border-color: #ccc;
+  border-style: none;
+  height: 200px;
+  border-radius: 25px;
+  -o-border-image: none;
+     border-image: none;
+  font-size: medium;
+  padding: 20px;
+  color: #777;
+  font-family: "Open Sans", sans-serif;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+@media (max-width: 576px) {
+  .contact-wrapper .content-background .form-wrapper .cell form textarea {
+    width: 90%;
+  }
+}
+
+.contact-wrapper .content-background .form-wrapper .cell form textarea:focus {
+  outline: none;
+}
+
+.contact-wrapper .content-background .form-wrapper .button-wrapper {
+  color: #faf9f9;
+  font-size: medium;
+  font-weight: bolder;
+}
+
+.contact-wrapper .content-background .form-wrapper .button-wrapper .button {
+  display: block;
+  position: relative;
+  all: unset;
+  background: -webkit-gradient(linear, left top, left bottom, from(#eb2f64), to(#ba265d));
+  background: linear-gradient(#eb2f64, #ba265d);
+  border-radius: 35px;
+  height: 60px;
+  width: -webkit-fill-available;
+  width: -moz-available;
+  width: stretch;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+
+.contact-wrapper .content-background .form-wrapper .button-wrapper .button:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.3);
+          box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.3);
+}
+
+.sections-wrapper {
+  display: -ms-grid;
+  display: grid;
+  text-align: center;
+}
+
+@media (min-width: 992px) {
+  .sections-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=contact.css.map */
