@@ -1,63 +1,30 @@
 import React from "react"
 import Room from "../Room"
 import "../../sass/rooms.scss"
+import rooms from "../../assets/data/rooms.json"
 
-function Rooms(title, price, size) {
-  const elements = [
-    {
-      id: "0001",
-      title: "Single",
-      price: "80",
-      currency: "usd",
-      image: "/rooms/room-1.jpeg",
-      size: "11m",
-    },
-    {
-      id: "0002",
-      title: "Double",
-      price: "100",
-      currency: "usd",
-      image: "/rooms/room-2.jpeg",
-      size: "16m",
-    },
-    {
-      id: "0003",
-      title: "Triple",
-      price: "120",
-      currency: "usd",
-      image: "/rooms/room-3.jpeg",
-      size: "20m",
-    },
-    {
-      id: "0004",
-      title: "Quad",
-      price: "140",
-      currency: "usd",
-      image: "/rooms/room-4.jpeg",
-      size: "28m",
-    },
-    {
-      id: "0005",
-      title: "Queen",
-      price: "160",
-      currency: "usd",
-      image: "/rooms/room-5.jpeg",
-      size: "28m",
-    },
-    {
-      id: "0006",
-      title: "King",
-      price: "200",
-      currency: "usd",
-      image: "/rooms/room-6.jpeg",
-      size: "45m",
-    },
-  ]
+function Rooms() {
+  // const [searchTerm, setSearchTerm] = React.useState("")
+  // const handleChange = (event) => {
+  //   setSearchTerm(event.target.value)
+  // }
+
+  const elements = Object.values(rooms)[0]
+  console.log(elements)
   const [searchTerm, setSearchTerm] = React.useState("")
-  const handleChange = (event) => {
-    setSearchTerm(event.target.value)
+  const filterData = (text) => {
+    const filteredUserData = rooms.filter((item) => {
+      const name = item.title
+      return name.toLowerCase().includes(text)
+    })
+    setSearchTerm(filteredUserData)
   }
 
+  const handleChange = (text) => {
+    setSearchTerm(text)
+    filterData(text)
+  }
+  
   // TODO fix searchTerm
   return (
     <>
@@ -67,8 +34,11 @@ function Rooms(title, price, size) {
             <input
               type="text"
               placeholder="Search rooms"
-              value={searchTerm}
-              onChange={handleChange}
+              searchTerm={searchTerm}
+              handleChange={handleChange}
+
+              // value={searchTerm}
+              // onChange={handleChange}
             />
           </form>
         </div>
