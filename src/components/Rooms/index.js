@@ -1,61 +1,72 @@
-import React from "react"
+import React, { useContext } from "react"
 import Room from "../Room"
 import "../../sass/rooms.scss"
-import rooms from "../../assets/data/rooms.json"
+import { SearchContext } from "../RoomsSearch"
+
+
+
 
 function Rooms() {
-  // const [searchTerm, setSearchTerm] = React.useState("")
+  // const [value, setValue] = useState("")
   // const handleChange = (event) => {
   //   setSearchTerm(event.target.value)
   // }
 
-  const elements = Object.values(rooms)[0]
-  console.log(elements)
-  const [searchTerm, setSearchTerm] = React.useState("")
-  const filterData = (text) => {
-    const filteredUserData = rooms.filter((item) => {
-      const name = item.title
-      return name.toLowerCase().includes(text)
-    })
-    setSearchTerm(filteredUserData)
-  }
+  // const data = Object.values(rooms)[0]
 
-  const handleChange = (text) => {
-    setSearchTerm(text)
-    filterData(text)
-  }
+  // const handleSearchText = (text) => {
+  //   setValue(value)
+  // }
   
-  // TODO fix searchTerm
-  return (
-    <>
-      <div class="search">
-        <div class="search-input">
-          <form>
-            <input
-              type="text"
-              placeholder="Search rooms"
-              searchTerm={searchTerm}
-              handleChange={handleChange}
 
-              // value={searchTerm}
-              // onChange={handleChange}
+  const context = useContext(SearchContext)
+  
+  
+  function createCards() {
+
+    return context.results.length > 0 ? (
+      context.results.map((result) => {
+        return (
+          <ul>
+            <Room
+              key={result.id}
+              title={result.title}
+              price={result.price}
+              size={result.size}
             />
-          </form>
-        </div>
-      </div>
+          </ul>
+        )
+      })
+    ) : (
+      <p className="SearchResults__empty">No matching results...</p>
+    )
+  }
 
-      <ul>
-        {elements.map((data) => (
-          <Room
-            key={data.id}
-            title={data.title}
-            price={data.price}
-            size={data.size}
-          />
-        ))}
-      </ul>
-    </>
-  )
+  return <div className="SearchResults">{createCards()}</div>
 }
+//   return (
+//     <div>
+//       {data
+//         .filter((item) => {
+//           if (!value) return true
+//           if (item.title.toLowerCase().includes(value)) {
+//             return true
+//           }
+//           return false
+//         })
+
+//         .map((item) => (
+//           <ul>
+//             <Room
+//               key={item.id}
+//               title={item.title}
+//               price={item.price}
+//               size={item.size}
+//             />
+//           </ul>
+//         ))}
+//     </div>
+//   )
+// }
 
 export default Rooms

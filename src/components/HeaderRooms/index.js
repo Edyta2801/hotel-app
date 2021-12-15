@@ -1,22 +1,53 @@
-import React from "react"
+import React, {
+  useRef,
+  useEffect,
+  useLayoutEffect,
+  useState,
+  useContext,
+} from "react"
 import "../../sass/header.scss"
-
 import logo from "../../materials/layout_materials/img/logo.png"
 import user from "../../materials/layout_materials/img/user.jpg"
 
-// const names = ["Single", "Double", "Triple", "Quad", "Queen", "King"]
+import { SearchContext } from "../RoomsSearch"
 
-function HeaderRooms() {
-  //   const [searchTerm, setSearchTerm] = React.useState("")
-  //   const handleChange = (event) => {
-  //     setSearchTerm(event.target.value)
-  //   }
+const HeaderRooms = ({ autoFocus }) => {
+  // const handleChange = (e) => {
+  //   handleSearchText(e.target.value)}
 
-  //   const results = !searchTerm
-  //     ? names
-  //     : names.filter((name) =>
-  //         names.toLowerCase().includes(searchTerm.toLocaleLowerCase())
-  //       )
+  const inputRef = useRef(null)
+  const [focused, setFocused] = useState(null)
+  const context = useContext(SearchContext)
+
+  useLayoutEffect(() => {
+    if (autoFocus) {
+      inputRef.current.focus()
+      setFocused(true)
+    }
+  }, [autoFocus])
+
+  useEffect(() => {
+    function handleClick(event) {
+      if (event.target === inputRef.current) {
+        inputRef.current.focus()
+        setFocused(true)
+      } else {
+        // inputRef.current.blur()
+        setFocused(false)
+      }
+    }
+
+    document.addEventListener("click", handleClick)
+    return () => {
+      document.removeEventListener("click", handleClick)
+    }
+  })
+
+  function handleInputChange(event) {
+    context.setInputValue(event.currentTarget.value)
+  }
+
+  const focusCn = focused ? "HeaderRooms focused" : "HeaderRooms"
 
   return (
     <>
@@ -28,15 +59,38 @@ function HeaderRooms() {
             </div>
           </div>
           <div class="search">
-            <div class="search-input" style={{ display: "none" }}>
-              <form>
-                <input
-                  type="text"
-                  placeholder="Search rooms"
-                  // value={searchTerm}
-                  // onChange={handleChange}
-                />
-              </form>
+            <div
+              class="search-input"
+              // style={{ display: "none" }}
+            >
+              <div className={focusCn}>
+                <form>
+                  <input
+                    type="search"
+                    placeholder="Search rooms"
+                    ref={inputRef}
+                    onChange={handleInputChange}
+                  />
+                </form>
+              </div>
+              {/* {data
+                .filter((item) => {
+                  if (!value) return true
+                  if (item.title.toLowerCase().includes(value)) {
+                    return true
+                  }
+                  return false
+                })
+                .map((item) => (
+                
+                    <Room
+                      key={item.id}
+                      title={item.title}
+                      price={item.price}
+                      size={item.size}
+                    />
+                
+                ))} */}
             </div>
           </div>
           <div class="avatar">

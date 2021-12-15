@@ -8,6 +8,7 @@ import Rooms from "./Rooms"
 import Hotel from "./Hotel"
 import Room from "./Room"
 import HeaderRooms from "./HeaderRooms"
+import RoomsSearch from "./RoomsSearch"
 
 export {
   Router,
@@ -20,4 +21,5 @@ export {
   Hotel,
   Room,
   HeaderRooms,
+  RoomsSearch,
 }
